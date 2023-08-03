@@ -12,12 +12,14 @@ format is described in Appendix section.
 
 
 The client opens a connection to the server and pops up a window like this:
+![image](https://github.com/richjpex/NSCOM01-RTSP-RTP/assets/97244148/0167c25c-1963-41ba-9e29-b356e73495a3)
 
 You can send RTSP commands to the server by pressing the buttons. A normal RTSP interaction goes as follows.
 
-Client sends SETUP. This command is used to set up the session and transport parameters.
-Client sends PLAY. This starts the playback.
-Client may send PAUSE if it wants to pause during playback.
-Client sends TEARDOWN. This terminates the session and closes the connection.
+1. Client sends SETUP. This command is used to set up the session and transport parameters.
+2. Client sends PLAY. This starts the playback.
+3. Client may send PAUSE if it wants to pause during playback.
+4. Client sends TEARDOWN. This terminates the session and closes the connection.
+
 The server always replies to all the messages the client sends. The reply codes are roughly the same as in HTTP. The code 200 means that the request was successful. In this task, you do not need to implement any other reply codes. For more information about RTSP, please see RFC 2326.
 
