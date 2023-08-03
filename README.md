@@ -20,3 +20,5 @@ You can send RTSP commands to the server by pressing the buttons. A normal RTSP 
 
 The server always replies to all the messages the client sends. The reply codes are roughly the same as in HTTP. The code 200 means that the request was successful. In this task, you do not need to implement any other reply codes. For more information about RTSP, please see RFC 2326.
 
+## Appendix
+In this task, the server streams a video that has been encoded into a proprietary MJPEG file format. This format stores the video as concatenated JPEG-encoded images, with each image being preceded by a 5-Byte header which indicates the bit size of the image. The server parses the bitstream of the MJPEG file to extract the JPEG images on the fly. The server sends the images to the client at periodic intervals. The client then displays the individual JPEG images as they arrive from the server.
