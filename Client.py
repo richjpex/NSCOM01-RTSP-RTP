@@ -9,11 +9,13 @@ CACHE_FILE_NAME = "cache-"
 CACHE_FILE_EXT = ".jpg"
 
 class Client:
+	# Status codes.
 	INIT = 0
 	READY = 1
 	PLAYING = 2
 	state = INIT
 	
+	# RTSP Request codes.
 	SETUP = 0
 	PLAY = 1
 	PAUSE = 2
@@ -247,16 +249,14 @@ class Client:
 						# TO COMPLETE
 						#-------------
 						# Update RTSP state.
-						# self.state = ...
 						self.state = self.READY
 						
 						# Open RTP port.
 						self.openRtpPort() 
 					elif self.requestSent == self.PLAY:
-						# self.state = ...
 						self.state = self.PLAYING
+
 					elif self.requestSent == self.PAUSE:
-						# self.state = ...
 						self.state = self.READY
 						
 						# The play thread exits. A new thread is created on resume.
@@ -274,17 +274,13 @@ class Client:
 		# TO COMPLETE
 		#-------------
 		# Create a new datagram socket to receive RTP packets from the server
-		# self.rtpSocket = ...
+
 		self.rtpSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-		
-		# Set the timeout value of the socket to 0.5sec
-		# ...
 		self.rtpSocket.settimeout(0.5)
 
 		
 		try:
 			# Bind the socket to the address using the RTP port given by the client user
-			# ...
 			self.rtpSocket.bind(('127.0.0.1', self.rtpPort))
 		except:
 			tkMessageBox.showwarning('Unable to Bind', 'Unable to bind PORT=%d' %self.rtpPort)
