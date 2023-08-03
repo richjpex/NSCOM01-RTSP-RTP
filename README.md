@@ -1,12 +1,9 @@
-# NSCOM01-RTSP-RTP
+# NSCOM01-RTSP-RTP-Video-Streaming
 
-For Python users:
-
-After completing the code, you can run it as follows:
-First, start the server with the command: `python Server.py server_port`
+First, start the server with the command: `python Server.py <server_port>`
 where server_port is the port your server listens to for incoming RTSP connections. The standard RTSP port is 554, but you will need to choose a port number greater than 1024.
 
-Then, start the client with the command: `python ClientLauncher.py server_host server_port RTP_port video_file`
+Then, start the client with the command: `python ClientLauncher.py <server_host> <server_port> <RTP_port> <video_file>`
 where server_host is the name of the machine where the server is running, server_port is the port where the server is listening on, RTP_port is the port where the RTP packets are received, and video_file is the name of the video file you want to request (we have provided one example file movie.Mjpeg). The file
 format is described in Appendix section.
 
