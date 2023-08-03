@@ -20,6 +20,7 @@ class Server:
 			ServerWorker(clientInfo).run()		
 
 if __name__ == "__main__":
+	print("Server is running on " + "127.0.0.1:" + str(sys.argv[1]))
 	(Server()).main()
 
 
