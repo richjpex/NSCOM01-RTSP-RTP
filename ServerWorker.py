@@ -151,6 +151,7 @@ class ServerWorker:
 		if code == self.OK_200:
 			#print("200 OK")
 			reply = 'RTSP/1.0 200 OK\nCSeq: ' + seq + '\nSession: ' + str(self.clientInfo['session'])
+			print("Reply to Client:\n"+reply+"\n")
 			connSocket = self.clientInfo['rtspSocket'][0]
 			connSocket.send(reply.encode())
 		

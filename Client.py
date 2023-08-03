@@ -219,6 +219,7 @@ class Client:
 			
 			if reply: 
 				self.parseRtspReply(reply.decode("utf-8"))
+				print('\nReply from Server:\n' + reply.decode("utf-8"))
 			
 			# Close the RTSP socket upon requesting Teardown
 			if self.requestSent == self.TEARDOWN:
